@@ -1,0 +1,12 @@
+<form [formGroup]="form">
+	<legend>Reactive Forms</legend>
+	<app-counter formControlName="count"></app-counter>
+  <app-check-box-grp formControlName="items" [data]="listData">
+    <checkbox value="item1">Item 1</checkbox>
+    <checkbox value="item2">Item 2</checkbox>
+    <checkbox value="item3">Item 3</checkbox>
+    <checkbox value="item4">Item 4</checkbox>
+    <checkbox *ngFor="let item of listData" [value]="item.value">{{item.name}}</checkbox>
+  </app-check-box-grp>
+	<p>form value: {{form.value|json}}</p>
+</form>
